@@ -1,0 +1,58 @@
+﻿<Page
+    x:Class="Test_System01.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Test_System01"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <RelativePanel Grid.Column="1">
+            <Button Name="endButton" Content="结束考试" RelativePanel.AlignRightWithPanel="True"/>
+            <TextBlock Name="timeTExtblock" Text="80s" RelativePanel.LeftOf="endButton" Margin="0,0,30,0" FontSize="24" />
+        </RelativePanel>
+        <RelativePanel Grid.Row="1" Grid.Column="0">
+            <ToggleButton Name="chooseRadioButton" Content="单选题" Margin="0,0,0,0"  Click="chooseRadioButton_Click"/>
+            <ToggleButton Name="checkButton" Content="多选题" RelativePanel.Below="chooseRadioButton" Margin="0,30,0,0"  Click="checkButton_Click"/>
+            <ToggleButton Name="BlankButton" Content="填空题" RelativePanel.Below="checkButton" Margin="0,30,0,0" Click="BlankButton_Click"/>
+        </RelativePanel>
+        <RelativePanel Grid.Row="0" Grid.Column="1" Margin="0,20,0,30">
+            <Button Name="nextText" Content="下一题" RelativePanel.RightOf="BackText" Margin="30,0,0,0"/>
+            <Button Name="BackText" Content="上一题" RelativePanel.AlignLeftWithPanel="True"  Margin="50,0,0,0" />
+        </RelativePanel>
+        <RelativePanel Grid.Row="3">
+            
+        </RelativePanel>
+        <RelativePanel Grid.Row="4" >
+            
+        </RelativePanel>
+        <RelativePanel Grid.Row="1" Grid.Column="1"  >
+            <Frame Name="MyFrame" Margin="50,10,0,0">
+                
+            </Frame>
+        </RelativePanel>
+        <RelativePanel Grid.Row="5" Grid.Column="1" CornerRadius="35,35,35,35" >
+            <Border Name="oneText" Margin="50,5,0,0" RelativePanel.AlignBottomWithPanel="True" CornerRadius="25" BorderThickness="1" BorderBrush="DarkSlateGray">
+                <Button Margin="5"  FontSize="10" FontWeight="Bold" Content="1" Background="Transparent" BorderThickness="0"/>
+            </Border>
+            <Border Name="twoTest" RelativePanel.RightOf="oneText" Margin="10,5,0,0" RelativePanel.AlignBottomWithPanel="True" CornerRadius="25" BorderThickness="1" BorderBrush="DarkSlateGray">
+                <Button Margin="5" FontSize="10" FontWeight="Bold" Content="2" Background="Transparent" BorderThickness="0"/>
+            </Border>
+            <Border Name="threeText" RelativePanel.RightOf="twoTest"  Margin="10,5,0,0" RelativePanel.AlignBottomWithPanel="True" CornerRadius="25" BorderThickness="1" BorderBrush="DarkSlateGray">
+                <Button Margin="5" FontSize="10" FontWeight="Bold" Content="3" Background="Transparent" BorderThickness="0"/>
+            </Border>
+            
+        </RelativePanel>
+    </Grid>
+</Page>
